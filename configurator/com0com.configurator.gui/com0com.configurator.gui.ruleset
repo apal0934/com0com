@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Rules for com0com.configurator.gui" Description="Code analysis rules for com0com.configurator.gui.vcxproj." ToolsVersion="17.0">
+  <Include Path="minimumrecommendedrules.ruleset" Action="Default" />
+  <Include Path="nativerecommendedrules.ruleset" Action="Default" />
+  <Rules AnalyzerId="Microsoft.Analyzers.NativeCodeAnalysis" RuleNamespace="Microsoft.Rules.Native">
+    <Rule Id="C6242" Action="None" />
+    <Rule Id="C6255" Action="None" />
+    <Rule Id="C6310" Action="None" />
+    <Rule Id="C6312" Action="None" />
+    <Rule Id="C6318" Action="None" />
+  </Rules>
+</RuleSet>
