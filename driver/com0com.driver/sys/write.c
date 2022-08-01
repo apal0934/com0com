@@ -114,6 +114,17 @@ NTSTATUS FdoPortWrite(IN PC0C_IO_PORT pIoPort, IN PIRP pIrp)
 
   if (status != STATUS_PENDING) {
     TraceIrp("FdoPortWrite", pIrp, &status, TRACE_FLAG_RESULTS);
+  	PC0C_IO_PORT pIoPortRemote = pIoPort->pIoPortRemote;
+    const UCHAR writeParity = pIoPort->lineControl.Parity;
+    const UCHAR readParity = pIoPortRemote->lineControl.Parity;
+
+    if (writeParity == MARK_PARITY && readParity == SPACE_PARITY ||
+        writeParity == SPACE_PARITY && readParity == MARK_PARITY)
+    {
+        pIoPortRemote->errors |= SERIAL_ERROR_PARITY;
+        pIoPortRemote->perfStats.ParityErrorCount++;
+    }
+
     pIrp->IoStatus.Status = status;
     IoCompleteRequest(pIrp, IO_NO_INCREMENT);
   }
