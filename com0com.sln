@@ -22,6 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "driver", "driver", "{5B82E9
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "com0com.driver.package", "driver\com0com.driver.package\com0com.driver.package.vcxproj", "{2CC5FF43-51D2-434E-B95D-094493ADA9CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{41EBC8A4-8884-473B-BB66-041A41FDC7A6}"
+	ProjectSection(SolutionItems) = preProject
+		readme = readme
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
