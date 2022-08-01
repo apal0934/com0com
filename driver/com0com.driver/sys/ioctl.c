@@ -326,7 +326,7 @@ NTSTATUS FdoPortIoCtl(
             InputBufferLength >= C0CE_SIGNATURE_SIZE &&
             RtlEqualMemory(pSysBuf, C0CE_SIGNATURE, C0CE_SIGNATURE_SIZE))
         {
-          RtlCopyMemory(pSysBuf + sizeof(PULONG), C0CE_SIGNATURE, C0CE_SIGNATURE_SIZE);
+		  RtlCopyMemory(pSysBuf + sizeof(ULONG), C0CE_SIGNATURE, C0CE_SIGNATURE_SIZE);
 
           if (OutputBufferLength > (sizeof(ULONG) + C0CE_SIGNATURE_SIZE)) {
             RtlZeroMemory(pSysBuf + sizeof(ULONG) + C0CE_SIGNATURE_SIZE,
