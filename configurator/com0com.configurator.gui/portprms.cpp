@@ -42,15 +42,15 @@ using namespace System::Collections::Generic;
 
 PortParams::PortParams(String ^str)
 {
-  array<Char> ^separator = {','};
-  array<String ^> ^prms = str->Split(separator, StringSplitOptions::RemoveEmptyEntries);;
+  array<Char> ^paramsSeparator = {','};
+  array<String ^> ^params = str->Split(paramsSeparator, StringSplitOptions::RemoveEmptyEntries);;
 
-  for (int i = 0 ; i < prms->Length ; i++) {
-    array<Char> ^separator = {'='};
-    array<String ^> ^prm = prms[i]->Split(separator);
+  for (int i = 0 ; i < params->Length ; i++) {
+    array<Char> ^paramSeparator = {'='};
+    array<String ^> ^param = params[i]->Split(paramSeparator);
 
-    if (prm->Length == 2) {
-      this[prm[0]->ToLower()] = prm[1]->ToUpper();
+    if (param->Length == 2) {
+      this[param[0]->ToLower()] = param[1]->ToUpper();
     }
   }
 }
